@@ -352,14 +352,26 @@
 /* TESTIMONIALS SECTION */
 /*------------------------------*/
 
-.section-testimonials {
-  padding: 9.6rem 0;
+.section-testimonials {  
+  background-color: #fdf2e9;
+  /* 不使用.grid模板是因為gap太大了(9.6rem)，這樣會使得testimonials-container被推擠的太狹小(影響文字排版美感) */
+  display: grid;
+  /* 調整grid兩個區塊的比例，55fr 45fr (可以看成55% 45%) */
+  grid-template-columns: 55fr 45fr;
+  /* 設定align-items: center;解決螢幕因為拉伸而變化的間距問題 */
+  align-items: center;
+}
+
+.testimonials-container {
+  padding: 9.6rem
 }
 
 .testimonials {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4.8rem
+  /* 間距全部設定4.8rem會讓左右看起來太接近 */
+  row-gap: 4.8rem;
+  column-gap: 8rem
 }
 
 .testimonial-img {
@@ -376,6 +388,29 @@
 
 .testimonial-name {
   font-size: 1.6rem;
-  color: #777
+  /* 原先使用的color: #777 與 background-color: #fdf2e9 對比度不佳，因此使用 https://coolors.co/contrast-checker/112a46-acc8e5 進行查詢合適的顏色*/
+  color: #6F6F6F;
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  /* 預設inline會帶有白色間隔 */
+  display: block;
+  /* 解決圖片爆版 */
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
