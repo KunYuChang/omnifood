@@ -287,14 +287,13 @@
         </div>
       </section>
 
+      <!-- 顧客推薦部分 -->
       <section class="section-testimonials">
         <!-- testimonials-container為了分testimonials, gallery兩區塊(沒有設置的話grid會破版) -->
         <div class="testimonials-container">
           <!-- 這個section不加container定固寬而是以100%寬度來設計  -->
           <span class="subheading">Testimonials</span>
-          <h2 class="heading-secondary">
-            Once you try it, you can't go back
-          </h2>
+          <h2 class="heading-secondary">Once you try it, you can't go back</h2>
 
           <div class="testimonials">
             <!-- 使用figure表示一些自成一體的內容 -->
@@ -353,59 +352,158 @@
           </div>
         </div>
 
+        <!-- 照片牆 -->
         <div class="gallery">
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-1.jpg" alt="Photo of beautifully arranged food">
+            <img
+              src="./img/gallery/gallery-1.jpg"
+              alt="Photo of beautifully arranged food"
+            />
             <!-- <figcaption>Caption</figcaption> -->
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-2.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-2.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-3.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-3.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-4.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-4.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-5.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-5.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-6.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-6.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-7.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-7.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-8.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-8.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-9.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-9.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-10.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-10.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-11.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
+            <img
+              src="./img/gallery/gallery-11.jpg"
+              alt="Photo of beautifully arranged food"
+            />
           </figure>
           <figure class="gallery-item">
-            <img src="./img/gallery/gallery-12.jpg" alt="Photo of beautifully arranged food">
-            <!-- <figcaption>Caption</figcaption> -->
-          </figure>          
+            <img
+              src="./img/gallery/gallery-12.jpg"
+              alt="Photo of beautifully arranged food"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- 價錢部分 -->
+      <section class="section-pricing">
+        <div class="container">
+          <span class="subheading">Pricing</span>
+          <h2 class="heading-secondary">
+            Eating well without breaking the bank
+          </h2>
+        </div>
+
+        <div class="container grid grid--2-cols">
+          <!-- 右靠仔 -->
+          <div class="princing-plan princing-plan--starter">
+            <header class="plan-header">
+              <p class="plan-name">Starter</p>
+              <p class="plan-price"><span>$</span>399</p>
+              <p class="plan-text">per month. That's just $13 per meal!</p>
+            </header>
+            <!-- list 第二次使用 -->
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>1 meal per day</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Order from 11am to 9pm</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Delivery is free</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="close-outline"></ion-icon>                
+              </li>
+            </ul>
+            <div class="plan-sing-up">
+              <a href="#" class="btn btn--full">Start eating well</a>
+            </div>
+          </div>
+          <!-- 左靠仔 -->
+          <div class="princing-plan princing-plan--complete">
+            <header class="plan-header">
+              <p class="plan-name">Complete</p>
+              <p class="plan-price"><span>$</span>649</p>
+              <p class="plan-text">per month. That's just $11 per meal!</p>
+            </header>
+
+            <!-- list 第二次使用 -->
+            <ul class="list">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span><strong>2 meal</strong> per day</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span><strong>Order 24/7</strong></span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Delivery is free</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Get access to latest recipes</span>
+              </li>
+            </ul>
+            <div class="plan-sing-up">
+              <a href="#" class="btn btn--full">Start eating well</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
-    <!-- ionicons所引用 -->
+    <!-- 以下兩個script是因為使用ionicons的icon所引用 -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
