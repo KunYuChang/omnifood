@@ -1,0 +1,329 @@
+/* 
+  單位時間 : rem 和 em 不依賴於媒體查詢中的 html 字體大小！ 相反，1rem = 1em = 16px   
+  解惑時間 : 使用em而沒有使用rem是因為Media Queries在某些瀏覽器當中rem會有問題
+  說明時間 : 設置不同的斷點(Breakpoint)以利在不同設備中呈現最佳的畫面
+  數學時間 : 1344px/16px = 84em
+          　1200px/16px = 75em       
+*/
+
+
+/*------------------------------*/
+/* BELOW 1344px (Smaller desktops) */
+/*------------------------------*/
+
+@media (max-width: 84em) {
+  /* 讓大尺寸的電腦螢幕跟筆電螢幕針對格局進行調整 */
+  .hero {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*------------------------------*/
+/* BELOW 1200px (Landscape Tablets) */
+/*------------------------------*/
+@media (max-width: 75em) {
+  /* 一個調整RWD字體大小的絕佳方式，直接縮小html的font-size! (前提是主要的CSS要用相對單位寫)
+     這個方法可以用最小的設定達到一個整體縮小的效果，而不需要一個一個設定，相當好用。
+  */
+
+  /* 9px/16px = 56.25% */
+  html {
+    font-size: 56.25%;
+  }
+
+  /* 但是雖然調整了html font-size，仍然有一些問題，間隙跟標題還是太大，所以再進行調整。 */
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading-secondary {
+    /* 4.4 → 3.6 */
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    /* 3.0 → 2.4 */
+    font-size: 2.4rem;
+  }
+
+  .header {
+    /* 在這個斷點希望header能夠跟container對齊 */
+    padding: 0 3.2rem;    
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 3.2rem;
+  }  
+}
+
+/*------------------------------*/
+/* BELOW 944px (Tablets) */
+/*------------------------------*/
+
+@media (max-width: 59em) {
+  /* 8px/16px = 50% */
+  html {
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box, 
+  .hero-img-box {
+    /* 圖片是inline元素，因此也可以被text-align所控制 */
+    text-align: center;
+  }
+
+  .hero-img {
+    /* 當圖片單一欄的時候就顯得太大了，因此縮小寬度。 */
+    width: 60%;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 1.2rem;
+  } 
+
+  /* MOBILE NAVIGATION */
+  .btn-mobile-nav {
+    /* 出現漢堡選單的icon */
+    display: block;
+  }
+
+  .main-nav {
+    /* nav用position定位佔滿全版 */
+    background-color: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* 將占滿全版的nav整個右移到視窗之外，這是一種為了在漢堡選單切換之時有一個進版的動畫 */
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* hide navigation */
+    
+    /* display不能動畫 */
+    /* display: none; */
+
+    /* opacity可以動畫(所以選擇使用) */
+    transition: all 1s ease-in;
+    
+    /* 1) 視覺上的隱藏 */    
+    opacity: 0;
+
+    /* 2) 設定滑鼠鍵盤無法點擊 */
+    pointer-events: none;
+
+    /* 3) 從螢幕讀取者中隱藏 */
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    /* 當導覽列的父元素header有設置屬性.nav-open時，.main-nav要將opacity的屬性值更改為1以顯示出導覽列 */
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0%); 
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link.nav-cta:link,
+  .main-nav-link.nav-cta:visited {
+    font-size: 3rem;
+  }
+}
+
+/*------------------------------*/
+/* BELOW 704px (Smaller tablets) */
+/*------------------------------*/
+
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diets {
+    /* 先跨欄再置中 */
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    /* 9.6 > 4.8 */
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  /* nav 要分成上三等分下二等分的布局，因此先把整個布局分成六等分，再分別給予比重 */
+
+  .grid--footer {
+    /* 縮小grid的布局 */
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .logo-col, .address-col {
+    grid-column: span 3;
+  }
+  
+  .nav-col {
+    /* 設置nav-col三個並排到前面 */
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+}
+
+/*------------------------------*/
+/* BELOW 544px (Phones) */
+/*------------------------------*/
+
+@media (max-width: 34em) {
+  /* 手機gap給小一點 */
+  .grid {
+    row-gap: 4.8rem;
+  }
+
+  /* 手機大小都只剩一欄的設計 */
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+  }
+
+  /* btn有跑版，所以調整一下padding */
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .section-hero {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  /* 圖太小了，設定放大 */
+  .hero-img {
+    width: 80%;
+  }
+
+  .logos img {
+    height: 1.2rem;
+  }
+
+  /* 換位置 */
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+
+  /* 讓圖更靠近自己的描述區塊 */
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+
+  .cta-img-box {
+    /* 由於cta-img-box並沒有放實際的內容撐起高度，所以必須給高度才能看到背景圖 */
+    height: 32rem;
+    /* 移到前面 */
+    grid-row: 1;
+  }
+}
