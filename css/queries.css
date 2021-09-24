@@ -142,11 +142,12 @@
   .btn-mobile-nav {
     /* 出現漢堡選單的icon */
     display: block;
+    z-index: 9999;
   }
 
   .main-nav {
     /* nav用position定位佔滿全版 */
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.97);
     position: absolute;
     top: 0;
     left: 0;
@@ -165,7 +166,7 @@
     /* display: none; */
 
     /* opacity可以動畫(所以選擇使用) */
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
     
     /* 1) 視覺上的隱藏 */    
     opacity: 0;

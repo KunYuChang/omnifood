@@ -78,6 +78,23 @@
   display: none;
 }
 
+/* STICKY NAVIGATION */
+.sticky {
+  /* 絕對定位的垂直置中又一個，這個方式比較特別一點，當物件設定絕對定位之後，預設它是抓不到整體可運用空間的範圍，所以 margin: auto 此時會失效，但當你設定了 top: 0; bottom: 0 時，絕對定位物件就抓到可運用的空間了，這時你的 margin: auto 就生效了(神奇吧) by CSScoke (https://ithelp.ithome.com.tw/articles/10202245) */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.97);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0,0,0,0.03);
+}
+
 /*------------------------------*/
 /* HERO SESSION */
 /*------------------------------*/
