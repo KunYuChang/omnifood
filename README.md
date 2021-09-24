@@ -1,7 +1,7 @@
 # omnifood Project
 >一個虛構的健康飲食訂閱商店。
 
-🔆[see live](kunyuchang-omnifood.netlify.app/)
+🔆[see live](https://kunyuchang-omnifood.netlify.app/)
 
 ## General Information
 - 專案思維 : 這個專案是模擬真實世界網站所使用到的方法進行建置。
